@@ -111,7 +111,7 @@ public class BookListActivity extends AppCompatActivity {
 
             viewHolder.mName.setText(book.getBookname());
 
-            String path = Environment.getExternalStorageDirectory() + "/imooc"
+            final String path = Environment.getExternalStorageDirectory() + "/imooc"
                     + book.getBookname() + ".txt";
             final File file = new File(path);
 
@@ -123,7 +123,8 @@ public class BookListActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if (file.exists()) {
                         // TODO: 2018/6/22 打开书籍
-                        finalViewHolder.mButton.setText("打开");
+//                        finalViewHolder.mButton.setText("打开");
+                        BookActivity.start(BookListActivity.this, path);
                     } else {
                         mClient.addHeader("Accept-Encoding", "identity");
                         mClient.get(book.getBookfile(),
