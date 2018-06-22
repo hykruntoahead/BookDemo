@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BookDemo</string>
+    <string name="book_list">书籍列表</string>
+</resources>
